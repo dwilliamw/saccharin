@@ -1,0 +1,276 @@
+﻿@{
+    ViewBag.Title = "Let's manage the stress";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!-- stress management CSS-->
+<head>
+    <link rel="stylesheet" href="~/Content/stressmanagement.css">
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+</head>
+<body data-spy="scroll" data-target=".navbar" data-offset="50">
+    <!-- page introduction start-->
+    <section class="breadcrumb" style="background-image:url(/img/stressmanagement.jpg)">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb_iner">
+                        <div class="breadcrumb_iner_item">
+                            <h2 style="color: white; font-family:Playfair Display">Let's Manage Our Stress</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- page introduction end-->
+    <!-- stress management part start-->
+    <div class="container">
+        <h1 class="heading-primary">Choose Your Role and Get Some Stress Management Advice</h1>
+        <div class="accordion">
+            <dl>
+                <dt>
+                    <a href="#accordion" aria-expanded="false" aria-controls="accordion" class="accordion-title accordionTitle js-accordionTrigger">I am a Student</a>
+                </dt>
+                <dd class="accordion-content accordionItem is-collapsed" id="accordion1" aria-hidden="true">
+                    <div class="container" style="margin-right: 0px; margin-left: 0px; max-width: 1120px;">
+                        <h2>Different Sources of Stress for Students</h2>
+                        <div id="mixedSlider">
+                            <div class="MS-content">
+                                <div class="item">
+                                    <div class="imgTitle">
+                                        <h2 class="blogTitle">Upcoming Assignments</h2>
+                                        <img src="~/img/s1.jpg" style="height:184.19px" alt="" />
+                                    </div>
+                                    <h3>Introduction:</h3>
+                                    <h4>Many students worry about getting a good grade or simply making time to study if there is more than one upcoming assignments. Test stress doesn’t just affect struggling students, either—high-achievers usually experience a lot of stress about doing well on tests.</h4>
+                                        <h3>Advice:</h3>
+                                        <p>1. Manage Time Wisely. For example, making a timetable to schedule your study.<br>2. Choosing the learning method that suits you.</p>
+                                    </div>
+                                <div class="item">
+                                    <div class="imgTitle">
+                                        <h2 class="blogTitle">Poor Sleep Schedule</h2>
+                                        <img src="~/img/s2.jpg" style="height:184.19px" alt="" />
+                                    </div>
+                                    <h3>Introduction:</h3>
+                                    <h4>Lack of sleep makes it difficult for students to concentrate on studying effectively. In fact, some professional and latest studies have shown that students who sleep less than 8 to 10 hours a night are more likely to feel stressed than other students who get enough sleep. </h4>
+                                    <div>
+                                        <h3>Advice:</h3>
+                                        <p>1. Ensure enough sleep. <br>2. Listening to a relaxing music before bed can help you fall asleep quickly.<br>3. Don't get into the habit of staying up late</p>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="imgTitle">
+                                        <h2 class="blogTitle">Transitioning to a new environment</h2>
+                                        <img src="~/img/s3.jpg" style="height:184.19px" alt="" />
+                                    </div>
+                                    <h3>Introduction:</h3>
+                                    <h4>Making a major move can be a stressful time for many students, whether it’s starting at a new school or making the transition from elementary school to high school. New classes, new teachers, and new routines can all be stressful for students, and take time to adjust to.</h4>
+                                    <div>
+                                        <h3>Advice:</h3>
+                                        <p>1. Talking to teachers about your concerns.<br>2. Communicating with parents and family members more often.<br>3. Being patient and keeping positive attitude.</p>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="imgTitle">
+                                        <h2 class="blogTitle">Lack of support</h2>
+                                        <img src="~/img/s4.jpg" style="height:184.19px" alt="" />
+                                    </div>
+                                    <h3>Introduction:</h3>
+                                    <h4>A lack of support from parents or teachers, even if it’s only perceived, can add a lot of stress to students. They may feel that a lot is expected of them, but that they don’t have a strong enough support system (whether emotional or practical) to achieve their goals.</h4>
+                                    <h3>Advice:</h3>
+                                    <p>1. Trying to resolve personal problems by talking to a friend, tutor or someone in your family.<br>2. Trying not to worry about the future or compare yourself with others.</p>
+                                </div>
+                                <div class="item">
+                                    <div class="imgTitle">
+                                        <h2 class="blogTitle">Lack of Organization</h2>
+                                        <img src="~/img/s5.jpg" style="height:184.19px" alt="" />
+                                    </div>
+                                    <h3>Introduction:</h3>
+                                    <h4>Students with poor organizational skills are more likely to feel stressed in school. This is usually because they are not properly equipped with the tools or understanding they need to learn. They may continue to fall behind, leading to more stress and frustration in schools.</h4>
+                                    <h3>Advice:</h3>
+                                    <p>1. Using a checklist frequently which shows your the expectations you need to accomplish for the day.<br>2. Using memory aids which are a helpful way to remember tasks and materials.</p>
+                                </div>
+
+                            </div>
+                            <div class="MS-controls">
+                                <button class="MS-left"><i class="fa fa-angle-left" aria-hidden="true"></i></button>
+                                <button class="MS-right"><i class="fa fa-angle-right" aria-hidden="true"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </dd>
+                <dt>
+                    <a href="#accordion" aria-expanded="false" aria-controls="accordion" class="accordion-title accordionTitle js-accordionTrigger">
+                        I am an Office Worker
+                    </a>
+                </dt>
+                <dd class="accordion-content accordionItem is-collapsed" id="accordion2" aria-hidden="true">
+                    <div class="container" style="margin-right: 0px; margin-left: 0px; max-width: 1120px;">
+                        <h2>Different Sources of Stress for Office Workers</h2>
+                        <div id="mixedSlider2">
+                            <div class="MS-content">
+                                <div class="item">
+                                    <div class="imgTitle">
+                                        <h2 class="blogTitle">Job Content and Demands</h2>
+                                        <img src="~/img/w1.jpg" style="height:184.19px" alt="" />
+                                    </div>
+                                    <h3>Introduction:</h3>
+                                    <h4>This includes the demands of the workload, the work pattern and the work environment. For example: unrealistic deadlines and expectations, technology overload and unmanageable workloads.</h4>
+                                    <h3>Advice:</h3>
+                                    <p>1. Prioritize tasks. <br>2. Break projects into small steps.<br>3. Be willing to compromise.</p>
+                                </div>
+                                <div class="item">
+                                    <div class="imgTitle">
+                                        <h2 class="blogTitle">Lack of Control</h2>
+                                        <img src="~/img/w2.jpg" style="height:184.19px" alt="" />
+                                    </div>
+                                    <h3>Introduction:</h3>
+                                    <h4>This is about how much authority employees have about the way they do their work. For example: little control over aspects of the job, not enough involvement in decision making and no influence over performance targets.</h4>
+                                    <div>
+                                        <h3>Advice:</h3>
+                                        <p>1. Asking for new duties if you've been doing the exact same work for a long time. <br>2. Keeping an optimistic attitude and doing your best with your tasks</p>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="imgTitle">
+                                        <h2 class="blogTitle">Role Ambiguity</h2>
+                                        <img src="~/img/w3.jpg" style="height:184.19px" alt="" />
+                                    </div>
+                                    <h3>Introduction:</h3>
+                                    <h4>Work related stress can be caused when an employee does not understand their role fully, if they have not been given adequate training to carry out their role or if their role has conflicting responsibilities.</h4>
+                                    <div>
+                                        <h3>Advice:</h3>
+                                        <p>1. Clarifying your job description. <br>2. Talking to your employer whether you do not understand the role requirements.</p>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="imgTitle">
+                                        <h2 class="blogTitle">Work-life Balance Problems</h2>
+                                        <img src="~/img/w4.jpg" style="height:184.19px" alt="" />
+                                    </div>
+                                    <h3>Introduction:</h3>
+                                    <h4>The pressures of an increasingly demanding work culture may be the biggest challenge to public mental health.For example, the stress of family relationships and work interfere with family and personal life.</h4>
+                                    <h3>Advice:</h3>
+                                    <p>1. Finding a job that you love.<br>2. Prioritizing your health. <br>3. Making time for yourself and your loved ones. <br>4. Setting goals and priorities (and stick to them)</p>
+                                </div>
+                                <div class="item">
+                                    <div class="imgTitle">
+                                        <h2 class="blogTitle">Poor Relationships</h2>
+                                        <img src="~/img/w5.jpg" style="height:184.19px" alt="" />
+                                    </div>
+                                    <h3>Introduction:</h3>
+                                    <h4>While employee being in the working environment, work relationship also can be one of the sources of stress. For example: bullying or harassment, discrimination and conflict with supervisors/managers.</h4>
+                                    <h3>Advice:</h3>
+                                    <p>1. Establish satisfying new friendships. It's never too late to make new friendships.<br />2. Helping others, especially those who appreciate you. This can bring great happiness and significantly reduce stress</p>
+                                </div>
+
+                            </div>
+                            <div class="MS-controls">
+                                <button class="MS-left"><i class="fa fa-angle-left" aria-hidden="true"></i></button>
+                                <button class="MS-right"><i class="fa fa-angle-right" aria-hidden="true"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </dd>
+                <dt>
+                    <a href="#accordion" aria-expanded="false" aria-controls="accordion" class="accordion-title accordionTitle js-accordionTrigger">
+                        Common Life Problems
+                    </a>
+                </dt>
+                <dd class="accordion-content accordionItem is-collapsed" id="accordion3" aria-hidden="true">
+                    <div class="container" style="margin-right: 0px; margin-left: 0px; max-width: 1120px; height:auto;">
+                        <h2>Different Sources of Stress for Everyone</h2>
+                        <div id="mixedSlider3">
+                            <div class="MS-content">
+                                <div class="item">
+                                    <div class="imgTitle">
+                                        <h2 class="blogTitle">A Heavy Workload</h2>
+                                        <img src="~/img/cs1.jpg" style="height:184.19px" alt="" />
+                                    </div>
+                                    <h3>Introduction:</h3>
+                                    <h4>When people are overwhelmed by a huge amount of work, they find it harder to get things done. This might cause a stressful cycle where work piles up and doesn’t have the time to complete it all—leading to even more stress.</h4>
+                                    <h3>Advice:</h3>
+                                    <p>1. Try to cut meaningless work and streamline time-consuming tasks.<br>2. The business can purchase more advanced equipment to automate certain tasks and reduce the burden on your staff.</p>
+                                </div>
+                                <div class="item">
+                                    <div class="imgTitle">
+                                        <h2 class="blogTitle">Financial Problems</h2>
+                                        <img src="~/img/cs2.jpg" style="height:184.19px" alt="" />
+                                    </div>
+                                    <h3>Introduction:</h3>
+                                    <h4>Many people are facing hard financial times and the impact on mental health can be significant. If you are under stress of financial problems, you will feel anxious over money or guilty spending money on non-essentials.</h4>
+                                    <div>
+                                        <h3>Advice:</h3>
+                                        <p>1. Identify your financial stressors and come up with a plan to manage your finances more efficiently.<br>2. Examine how you deal with financial stress – address any unhealthy behaviors you may be engaging in, such as gambling or drinking, as a way to relieve money stress.</p>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="imgTitle">
+                                        <h2 class="blogTitle">Separation or Divorce</h2>
+                                        <img src="~/img/cs3.jpg" style="height:184.19px" alt="" />
+                                    </div>
+                                    <h3>Introduction:</h3>
+                                    <h4>Even if both partners agree on ending the relationship, there are always a number of emotional, practical and legal considerations that have to be dealt with, such as living arrangements, financial matters and child custody.</h4>
+                                    <div>
+                                        <h3>Advice:</h3>
+                                        <p>1. Building a good support system around yourself.<br> 2. Taking time to make any decisions. <br> 3. Staying physically active.</p>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="imgTitle">
+                                        <h2 class="blogTitle">Death of a Loved One</h2>
+                                        <img src="~/img/cs4.jpg" style="height:184.19px" alt="" />
+                                    </div>
+                                    <h3>Introduction:</h3>
+                                    <h4>The death of a spouse or other loved one also be the list of the most stressful things we experience. People may feel your world has been turned upside down and you don’t know how to go on without them.</h4>
+                                    <h3>Advice:</h3>
+                                    <p>1. Healing often comes from sharing our grief with others, so talk about your feelings with friends and family.<br> 2. Asking for help of a grief support group or a professional counselor to find ways to deal with your loss.</p>
+                                </div>
+                                <div class="item">
+                                    <div class="imgTitle">
+                                        <h2 class="blogTitle">Chronic Illness or Injury</h2>
+                                        <img src="~/img/cs5.jpg" style="height:184.19px" alt="" />
+                                    </div>
+                                    <h3>Introduction:</h3>
+                                    <h4>Long-term health conditions can put pressure on affected people and their loved ones. For example, additional stress managing chronic pain, increased financial burdens or dealing with limitations caused by your illness.</h4>
+                                    <h3>Advice:</h3>
+                                    <p>1. Learn as much as you can about your disease or injury and its treatment.<br> 2. You may need to adjust your expectations to your situation. <br> 3. Take care of yourself -- get enough sleep, eat healthy and exercise if you can.</p>
+                                </div>
+
+                            </div>
+                            <div class="MS-controls">
+                                <button class="MS-left"><i class="fa fa-angle-left" aria-hidden="true"></i></button>
+                                <button class="MS-right"><i class="fa fa-angle-right" aria-hidden="true"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </dd>
+            </dl>
+        </div>
+    </div>
+    <!-- stress management part end-->
+    <script src="~/Scripts/stressmanagement.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="~/Scripts/multislider.min.js"></script>
+    <script>
+        $('#mixedSlider').multislider({
+            duration: 250,
+            interval: false
+        });
+        $('#mixedSlider2').multislider({
+            duration: 250,
+            interval: false
+        });
+        $('#mixedSlider3').multislider({
+            duration: 250,  //7000 (using auto-function)
+            interval: false
+        });
+    </script>
+    <style>
+        h1.h2.h3.h4 {
+            font-family: Montserrat;
+        }
+    </style>
+</body>

@@ -1,0 +1,109 @@
+﻿@{
+    ViewBag.Title = "Let's Burn Your Calories";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<head>
+    <meta charset="UTF-8">
+</head>
+
+<body onload="createAllButtons()">
+    <!-- page introduction start-->
+    <section class="breadcrumb" style="background-image:url(/img/exercise-main.jpg);">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb_iner">
+                        <div class="breadcrumb_iner_item">
+                            <h2 style="color: white;">Let's Burn Some Calories!</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- page introduction end-->
+    <!-- selection start-->
+    <!--input total calorie start-->
+    <section>
+        <div class="wrapper-top">
+            <p style="padding-top:9px;padding-bottom:9px;"><b>Instruction: </b>If you have not done the 'Sugar Analysis' under the 'Analysis Tools', you can manually enter the number of calories below.</p>
+            <h3 style="color:black;">1. Total Calories You Want to Burn</h3>
+            <input id="kcal" type="number" min="1" oninput="this.value=this.value.replace(/[-]/g,'')" value="0"> <label style="color:black; font-family: Montserrat">Calories (kcal)</label>
+            <p style="font-size:small; padding-left:22px;"><i>Note: kcal stands for kilo calorie. 1 kcal equals to 1 Calorie. </i></p>
+            <h3 style="color:black; margin-top: 20px">2. Please Choose the Intensity Level of the Exercise</h3>
+        </div>
+        <!--input total calorie end-->
+        <div class="wrapper">
+            <ul class="tabs clearfix" data-tabgroup="first-tab-group">
+                <li><a href="#tab1" class="active">Low</a></li>
+                <li><a href="#tab2">Moderate</a></li>
+                <li><a href="#tab3">Intense</a></li>
+            </ul>
+            <section id="first-tab-group" class="tabgroup">
+                <div id="tab1">
+                    <h3>3. Please Choose Up to 5 Number of Exercises From Below </h3>
+                    <p>This type of exercise is typically burning less than 280 kcal per hour</p>
+                    
+
+                    <br />
+                </div>
+                <div id="tab2">
+                    <h3>3. Please Choose Up to 5 Number of Exercises From Below </h3>
+                    <p>This type of exercise is typically burning between 280 to 500 kcal per hour</p>
+                    
+
+                    <br />
+                </div>
+                <div id="tab3">
+                    <h3>3. Please Choose Up to 5 Number of Exercises From Below </h3>
+                    <p>This type of exercise is typically burning more than 500 kcal per hour</p>
+                    
+
+                    <br />
+                </div>
+            </section>
+        </div>
+        <div id="scroll-here" class="output-container col-md-12">
+            <h3 id="myKcal"></h3>
+            <p>Here below are all the exercises you have selected, with its duration needed to burn your calories and the number of calories burned per hour.</p>
+            <br />
+            <div id="output-exercises">
+
+            </div>
+            <br />
+            <div>
+                <input class="btn btn-danger" type="button" value="Clear All" onclick="clearOutput()" />
+            </div>
+        </div>
+        <div id="loader" class="" data-text=""></div>
+    </section>
+    <!--selection part end-->
+    <script src="~/Scripts/exercise-tabs.js"></script>
+    <script src="~/Scripts/tab-buttons.js"></script>
+    <!--exercise css-->
+    <link href="~/Content/css-loader/css-loader.css" rel="stylesheet">
+    <link rel="stylesheet" href="~/Content/exercise-tabs.css" />
+    <link rel="stylesheet" href="~/Content/tab-buttons.css" />
+    <link rel="stylesheet" href="~/Content/exercise-output.css" />
+    <style>
+        .hover-gif {
+            display:inline;
+            margin: 0;
+        }
+        a.hover-gif img {
+            display:none;
+        }
+        a.hover-gif:hover img {
+            position:relative;
+            float:right;
+            display:inline;
+            width: 150px;
+            height: auto;
+            top: -40px;
+            left: -120px;
+        }
+        .indiv_out {
+            margin-bottom: 40px;
+        }
+    </style>
+</body>

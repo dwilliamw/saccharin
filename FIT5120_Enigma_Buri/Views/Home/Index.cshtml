@@ -1,0 +1,178 @@
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<head>
+    <link rel="stylesheet" href="~/Content/scrolldown.css" />
+</head>
+
+
+<!-- banner part start-->
+<section class="banner_part">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-7">
+                <div class="banner_text">
+                    <div class="banner_text_iner">
+                        <h1>How Much Sugar Did I Eat Today?</h1>
+                        <a class="btn_1" @Html.ActionLink("Feel free to check", "SugarAnalysis")</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="containers">
+            <div class="chevron"></div>
+            <div class="chevron"></div>
+            <div class="chevron"></div>
+            <span class="text">Scroll down</span>
+        </div>
+    </div>
+</section>
+<!-- banner part start-->
+<!-- about part start-->
+<section class="about_part">
+    <div class="container">
+        <div class="row align-items-center justify-content-center">
+            <div class="col-lg-12">
+                <div class="about_part_iner">
+                    <div class="row align-items-center">
+                        <div class="col-lg-7">
+                            <div class="about_text">
+                                <h2>The Dangers of Excessive Sugar Intake Should Be Noted</h2>
+                                <p>
+                                    The World Health Organization recommends limiting "free sugar" to less than 10%
+                                    of our total energy intake. This is equivalent to about 12 teaspoons a day for
+                                    an average adult.
+                                </p>
+                                <p>
+                                    More than half of Australian adults exceed this limit, often without knowing.
+                                    "Free sugars" don't just come from coffee sweetener, tea sweetener or home-cooked
+                                    dinner; but they also come from the manufacturing processing where they added aditional sugars.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-lg-5">
+                            <div class="about_img">
+                                <img src="~/img/about.jpg" alt="" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- about part end-->
+<!-- reason_menu start-->
+<section class="food_menu">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-5">
+                <div class="section_tittle">
+                    <h2>The Reasons Why Too Much Sugar is Bad</h2>
+                </div>
+            </div>
+            <div class="col-lg-12">
+                <div class="single-member">
+                    <div class="row">
+                        <div class="col-sm-6 col-lg-6">
+                            <div class="single_food_item media">
+                                <img src="~/img/reason/reason1.png"
+                                     class="img-responsive"
+                                     alt="..." />
+                                <div class="media-body align-self-center">
+                                    <h3>Weight Gain</h3>
+                                    <p>Key Words</p>
+                                    <h5>Sugary Drinks/Accumulation of Visceral Fat</h5>
+                                </div>
+                            </div>
+                            <div class="single_food_item media">
+                                <img src="~/img/reason/reason2.png"
+                                     class="img-responsive"
+                                     alt="..." />
+                                <div class="media-body align-self-center">
+                                    <h3>Heart Disease</h3>
+                                    <p>Key Words</p>
+                                    <h5>Obesity/High blood pressure/Inflammation</h5>
+                                </div>
+                            </div>
+                            <div class="single_food_item media">
+                                <img src="~/img/reason/reason4.png"
+                                     class="img-responsive"
+                                     alt="..." />
+                                <div class="media-body align-self-center">
+                                    <h3>Depression</h3>
+                                    <p>Key Words</p>
+                                    <h5>Increasing depression level/Both Men and Women</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-lg-6">
+                            <div class="single_food_item media">
+                                <img src="~/img/reason/reason3.png"
+                                     class="img-responsive"
+                                     alt="..." />
+                                <div class="media-body align-self-center">
+                                    <h3>Skin Aging</h3>
+                                    <p>Key Words</p>
+                                    <h5>Advanced glycation end products(AGEs)</h5>
+                                </div>
+                            </div>
+                            <div class="single_food_item media">
+                                <img src="~/img/reason/reason5.png"
+                                     class="img-responsive"
+                                     alt="..." />
+                                <div class="media-body align-self-center">
+                                    <h3>Fatty Liver</h3>
+                                    <p>Key Words</p>
+                                    <h5>NAFLD</h5>
+                                </div>
+                            </div>
+                            <div class="single_food_item media">
+                                <img src="~/img/reason/reason6.png"
+                                     class="img-responsive"
+                                     alt="..." />
+                                <div class="media-body align-self-center">
+                                    <h3>Dementia</h3>
+                                    <p>Key Words</p>
+                                    <h5>Accelerate Cognitive Decline/Impairing memory</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- reason_menu part end-->
+<!-- introduction of video part start-->
+<div class="container">
+    <div class="row justify-content-center">
+        <div style="height:150px;">
+            <div class="section_tittle">
+                <p>Video Section</p>
+                <h2>Please Refer to the Video Below</h2>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- introduction of video part end-->
+<!-- intro_video_bg start-->
+<section class="intro_video_bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="intro_video_iner text-center">
+                    <div class="intro_video_icon">
+                        <a id="play-video_1"
+                           class="video-play-button popup-youtube"
+                           href="https://www.youtube.com/watch?v=pM7g9rsPHiA">
+                            <span class="ti-control-play"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

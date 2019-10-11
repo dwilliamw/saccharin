@@ -1,0 +1,28 @@
+﻿.output-container {
+    color: #98927C;
+    background: #F2EEE2;
+    margin: 20px auto;
+    width: 80%;
+    font-family: Montserrat;
+    font-size: 14px;
+    line-height: 24px;
+    max-width: 1000px;
+    min-width: 340px;
+    max-height: 700px;
+    min-height: 170px;
+    overflow: hidden;
+    border-style: solid;
+    padding: 30px;
+}
+
+    .output-container h3 {
+        font-family: Montserrat;
+    }
+
+    .output-container b {
+        color: black;
+    }
+
+    .output-container p {
+        /*margin-right: 5em;*/
+    }

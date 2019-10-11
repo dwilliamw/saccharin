@@ -1,0 +1,165 @@
+﻿@{
+    ViewBag.Title = "Test API Page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<head>
+    <link rel="stylesheet" href="~/Content/bmi.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/bmi.js"></script>
+    <link href="~/Content/myChart.css" rel="stylesheet">
+    <link href="~/Content/css-loader/css-loader.css" rel="stylesheet">
+</head>
+<body onload="hideArea()">
+    <!-- breadcrumb start-->
+    <section class="breadcrumb" style="background-image:url(/img/bmi-main.jpg);">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb_iner">
+                        <div class="breadcrumb_iner_item">
+                            <p>BMI Calculator</p>
+                            <h3 style="color: white; font-size: 36px">Calculate Your Body Mass Index Here </h3>
+                            <h3 style="color: white; font-size: 36px">and Compare It Against Average Australian </h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- breadcrumb end-->
+
+    <div class="col-md-12">
+        <br />
+        <div class="wrapper-top">
+            <h3>What is BMI?</h3>
+            <p style="width: 930px; text-align:left">
+                Body Mass Index (BMI) is a measurement of a person’s weight with respect to his or her height.
+                It is more of an indicator than a direct measurement of a person’s total body fat.
+            </p>
+            <div align="center" style="margin-top:20px;">
+                <button class="toggle_btn" id="metric-btn" type="button" onclick="showMetric()" autofocus>Metric</button><button class="toggle_btn" id="imperial-btn" type="button" onclick="showImperial()">Imperial</button>
+            </div>
+            <div id="metric-input" align="center">
+                <br />
+                <h4>Metric Measurement</h4>
+                <label>Your Weight (kg): </label>
+                <input class="bmi-input" id="weight" type="number" value="70" onFocus="if (this.value==this.defaultValue) this.value='';" onblur="if (this.value=='') this.value=this.defaultValue;" min="30" oninput="this.value=this.value.replace(/[-]/g,'')" />
+                
+                <label style="margin-left:10px;">Your Height(cm): </label> 
+                <input style="margin-right:10px;" class="bmi-input" id="height" type="number" value="180" onFocus="if (this.value==this.defaultValue) this.value='';" onblur="if (this.value=='') this.value=this.defaultValue;" min="90" max="250" oninput="this.value=this.value.replace(/[-]/g,'')" />
+                
+                <label>Your Age (years):</label> 
+                <input class="bmi-input" id="age" type="number" value="25" onFocus="if (this.value==this.defaultValue) this.value='';" onblur="if (this.value=='') this.value=this.defaultValue;" min="1" max="100" oninput="this.value=this.value.replace(/[-]/g,'')" />
+                <br />
+                
+                <label>Your Gender:</label>
+                <label for="male"><input name="sex" type="radio" checked="checked" id="male" value="m">Male</label>
+                <label for="female"><input name="sex" type="radio" value="f" id="female">Female</label>
+                <br /><button type="button" onclick="calcBMI()" class="btn btn-primary">Submit</button>
+            </div>
+            <div id="imperial-input" align="center" style="display:none;">
+                <br />
+                <h4>Imperial Measurement</h4>
+                <label>Your Weight (Lbs): </label>
+                <input class="bmi-input" id="imperial-weight" type="number" value="145" onFocus="if (this.value==this.defaultValue) this.value='';" onblur="if (this.value=='') this.value=this.defaultValue;" min="80" oninput="this.value=this.value.replace(/[-]/g,'')" />
+
+                <label style="margin-left:10px;">Your Height:</label>
+                <input class="bmi-input" id="height-ft" style="width:30px;" type="number" value="5" onFocus="if (this.value==this.defaultValue) this.value='';" onblur="if (this.value=='') this.value=this.defaultValue;" min="3" oninput="this.value=this.value.replace(/[-]/g,'')" /><label>ft</label>
+                <input class="bmi-input" id="height-in" style="width:30px;" type="number" value="11" onFocus="if (this.value==this.defaultValue) this.value='';" onblur="if (this.value=='') this.value=this.defaultValue;" min="0" oninput="this.value=this.value.replace(/[-]/g,'')" /><label style="margin-right:10px;">in</label>
+
+                <label>Your Age (years):</label> 
+                <input class="bmi-input" id="imperial-age" type="number" value="25" onFocus="if (this.value==this.defaultValue) this.value='';" onblur="if (this.value=='') this.value=this.defaultValue;" min="1" oninput="this.value=this.value.replace(/[-]/g,'')" />
+                <br />
+
+                <label>Your Gender:</label>
+                <label for="male"><input name="sex-b" checked="checked" type="radio" id="imperial-male" value="m">Male</label>
+                <label for="female"><input name="sex-b" type="radio" value="f" id="imeprial-female">Female</label>
+                <br /><button type="button" onclick="calcImperialBMI()" class="btn btn-primary">Submit</button>
+            </div>
+        </div>
+    </div>
+    <br />
+    <div id="area" style="display:none;">
+        <div id="box_bmi">
+            <p id="bmi0">Your BMI: </p>
+            <p id="bmi"></p>
+        </div>
+        <div id="box_status">
+            <p id="status0">Your Status: </p>
+            <p id="status"></p>
+        </div>
+        <div id="box_risk">
+            <p id="your-risk0">Your Risk: </p>
+            <p id="your-risk"></p>
+        </div>
+        <div id="box_ideal">
+            <p id="ideal-weight0">Your Ideal-Weight: </p>
+            <p id="ideal-weight"></p>
+        </div>
+
+    </div>
+    <div id="loader" class="" data-text=""></div>
+    <br />
+    <div class="chart-container">
+        <canvas id="myChart" class="col-md-12"></canvas>
+    </div>
+
+</body>
+
+<style>
+    .wrapper-top {
+        margin: 9px auto;
+        width: 80%;
+        font-family: Montserrat;
+        color: #98927C;
+        font-size: 14px;
+        line-height: 24px;
+        max-width: 1000px;
+        min-width: 340px;
+        padding-left: 26px;
+        border:solid;
+        padding: 10px;
+    }
+
+        .wrapper-top h3 {
+            font-family: Montserrat;
+        }
+    .bmi-input{
+        width:70px;
+    }
+
+    .toggle_btn {
+        /* default for <button>, but useful for <a> */
+        display: inline-block;
+        text-align: center;
+        text-decoration: none;
+        /* create a small space when buttons wrap on 2 lines */
+        margin: 2px 0;
+        /* invisible border (will be colored on hover/focus) */
+        border: solid 1px transparent;
+        border-radius: 4px;
+        /* size comes from text & padding (no width/height) */
+        padding: 0.5em 1em;
+        /* make sure colors have enough contrast! */
+        color: #ffffff;
+        background-color: #F09C35;
+        margin-right: 5px;
+    }
+
+    /* inverse colors on mouse-over and focus */
+        .toggle_btn:hover,
+        .toggle_btn:focus {
+            color: #F09C35;
+            border-color: currentColor;
+            background-color: white;
+        }
+    .toggle_btn {
+        /* ... */
+        /* all browsers: remove the default outline since
+      we are rolling our own focus styles */
+        outline: none;
+    }
+</style>

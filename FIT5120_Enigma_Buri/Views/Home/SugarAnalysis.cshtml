@@ -1,0 +1,137 @@
+﻿@{
+    ViewBag.Title = "Sugar Analysis";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<body onload="clearLocalStorage()">
+    <!-- breadcrumb start-->
+    <section class="breadcrumb breadcrumb_bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb_iner">
+                        <div class="breadcrumb_iner_item">
+                            <p>Calculate Your Sugar Intake</p>
+                            <h2>Sugar Analysis</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- breadcrumb end-->
+    <!-- CDN for jQuery, chart.js and tabulator.js -->
+    <link href="https://unpkg.com/tabulator-tables@4.4.1/dist/css/tabulator.min.css" rel="stylesheet">
+    <script type="text/javascript" src="https://unpkg.com/tabulator-tables@4.4.1/dist/js/tabulator.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+
+    <!-- custom scripts start -->
+    <script type="text/javascript" src="~/Scripts/nutrition-analysis.js"></script>
+
+    <link href="~/Content/css-loader/css-loader.css" rel="stylesheet">
+    <link href="~/Content/myChart.css" rel="stylesheet">
+    <link href="~/Content/myTable.css" rel="stylesheet">
+    <link href="~/Content/scrolldown.css" rel="stylesheet">
+    <!-- custom scripts end -->
+    <section id="section01">
+        <div class="col-md-12" id="nut-description" style="width:100%; height:auto;" align="center">
+            <div class="wrapper-top" style="display: inline-block; text-align: left;">
+                <br />
+                <h3 style=""><b>Please Input All Foods and Drinks from Your Diet</b></h3>
+                <br />
+                <p><b>Instruction 1: </b>At least put the quantity number to get the nutrition analysis result</p>
+                <p><b>Instruction 2: </b>To get the most accurate result, please input the unit measurement (grams, litre, ml, bowl, whole, etc)</p>
+                <br />
+                <form>
+                    <li style="list-style: none;" class="inputfield">
+                        <div class="inputfields">
+                            Quantity: <input type="number" class="quantity" style="width: 50px;" min="1" onFocus="if (this.value==this.defaultValue) this.value='';" onblur="if (this.value=='') this.value=this.defaultValue;" oninput="this.value=this.value.replace(/[-]/g,'')" required />
+                            Unit: <select type="text" class="unit" style="width: 130px; height: 30px" required />
+                            <option value="">Please choose</option>
+                            <option value="cup">cup</option>
+                            <option value="bowl">bowl</option>
+                            <option value="litre">litre</option>
+                            <option value="millilitre">millilitre</option>
+                            <option value="gram">gram</option>
+                            <option value="whole">whole</option>
+                            </select>
+                            Food or Drink Name: <input type="text" class="foodname" style="width: 150px;" onFocus="if (this.value==this.defaultValue) this.value='';" onblur="if (this.value=='') this.value=this.defaultValue;" min="1" oninput="this.value=this.value.replace(/[^\a-\z\A-\Z]/g,' ')" required />
+                            <input class="btn btn-secondary" type="button" value="Add More Items" onclick="add();">
+                            <input class="btn btn-danger" type="button" value="Delete" onclick="del(this);">
+                        </div>
+                    </li>
+                </form>
+            </div>
+            <br />
+            <button type="button" onclick="nutAnalysis()" class="btn btn-primary">Submit</button>
+            <div id="arrowdown" class="containers" style="display:none; margin-top:180px;">
+                <div class="chevron"></div>
+                <div class="chevron"></div>
+                <div class="chevron"></div>
+                <span class="text">Scroll down</span>
+            </div>
+        </div>
+    </section>
+    <section id="section02">
+        <div id="loader" class="" data-text=""></div>
+        <div id="table-container" class="col-md-12">
+            <div id="example-table"></div>
+            <p id="notes" style="display: none;"><i>Note: Calories from Sugar is derived from Sugars(g) multiplied by 4.</i></p>
+        </div>
+        <br />
+        <div class="chart-container">
+            <canvas id="myChart" class="col-md-12"></canvas>
+        </div>
+        <br />
+        <div class="wrapper-top" align="center">
+            <a id="exe_btn" class="btn_1" style="display: none;" @Html.ActionLink("Let's Burn Some Calories", "Exercise")</a>
+            <a id="str_btn" class="btn_1" style="display: none;" @Html.ActionLink("Check Your Stress Level", "Stress")</a>
+        </div>
+    </section>
+</body>
+
+<style>
+    .wrapper-top {
+        margin: 9px auto;
+        width: 80%;
+        font-family: Montserrat;
+        color: #98927C;
+        font-size: 14px;
+        line-height: 24px;
+        max-width: 1000px;
+        min-width: 340px;
+        padding-left: 26px;
+    }
+
+        .wrapper-top h3 {
+            font-family: Montserrat;
+        }
+    .inputfield div {
+        padding-bottom: 10px;
+    }
+    .foodname {
+        margin-right: 20px;
+    }
+    
+    .btn_1 {
+        margin-right: 30px;
+    }
+</style>
+
+<script>
+    function add() {
+        var cloneDiv = $(".inputfield div").eq(0);
+        var newDiv = cloneDiv.clone();
+        $("input[type='text']", newDiv).val("");
+        newDiv.appendTo(".inputfield");
+    }
+    function del(btn) {
+        var delDiv = $(btn).parent();
+        var lastDiv = $(".inputfield div");
+        if (lastDiv.length > 1) {
+            delDiv.remove();
+        }
+    }
+</script>

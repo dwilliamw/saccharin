@@ -1,0 +1,70 @@
+﻿/*body {
+    font-family: sans-serif;
+    background: green;
+}*/
+
+h3 {
+    margin: 5px 0;
+    font-family: Montserrat;
+}
+
+#case {
+    width: 900px;
+    margin: 0 auto;
+    outline-style:solid;
+    background: white;
+    padding: 10px 15px;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+input {
+    margin: 5px 10px;
+}
+
+button {
+    font-size: 18px;
+    padding: 10px;
+    margin: 20px 0;
+    color: white;
+    border: 0;
+    border-radius: 10px;
+    border-bottom: 3px solid #333;
+}
+
+#submit {
+    background: #0069d9;
+}
+
+#reset {
+    background: red;
+}
+
+#answer {
+    border: 1px dashed #ccc;
+    background: #eee;
+    padding: 15px;
+}
+
+label {
+    margin-bottom: 20px;
+}
+
+.first-radio {
+    margin-left: 20px;
+}
+
+.box {
+    position: relative;
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+    border: 2px solid;
+    margin-right: 5px;
+    margin-top: 5px;
+}
+
+#gauge-container {
+    float: left;
+    margin-top: 10px;
+}

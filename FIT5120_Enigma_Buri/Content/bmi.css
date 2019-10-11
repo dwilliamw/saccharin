@@ -1,0 +1,34 @@
+#area {
+    margin: auto;
+    width: 630px;
+    height: 130px;
+    text-align: center;
+}
+#box_bmi {
+    outline-style: solid;
+    width: 100px;
+    height: 130px;
+    float: left;
+    margin-right: 20px;
+}
+#box_status {
+    outline-style: solid;
+    width: 150px;
+    height: 130px;
+    float: left;
+    margin-right: 20px;
+}
+#box_risk {
+    outline-style: solid;
+    width: 200px;
+    height: 130px;
+    float: left;
+    margin-right: 20px;
+}
+#box_ideal {
+    outline-style: solid;
+    width: 100px;
+    height: 130px;
+    float: left;
+    margin-right: 20px;
+}

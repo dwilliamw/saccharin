@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="BmiDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="FemaleBmi">
+          <Key>
+            <PropertyRef Name="Age_group" />
+          </Key>
+          <Property Name="Age_group" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Gender" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Year" Type="int" Nullable="false" />
+          <Property Name="Underweight" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Normal_range_i" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Normal_range_ii" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Total_normal_range" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Overweight" Type="varchar(max)" Nullable="false" />
+          <Property Name="Obesity_class_i" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Obesity_class_ii" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Obesity_class_iii" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Total_obese" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Total_overweight_and_obese" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MaleBmi">
+          <Key>
+            <PropertyRef Name="Age_group" />
+          </Key>
+          <Property Name="Age_group" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Gender" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Year" Type="int" Nullable="false" />
+          <Property Name="Underweight" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Normal_range_i" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Normal_range_ii" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Total_normal_range" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Overweight" Type="varchar(max)" Nullable="false" />
+          <Property Name="Obesity_class_i" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Obesity_class_ii" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Obesity_class_iii" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Total_obese" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Total_overweight_and_obese" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="BmiDBModelStoreContainer">
+          <EntitySet Name="FemaleBmi" EntityType="Self.FemaleBmi" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MaleBmi" EntityType="Self.MaleBmi" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="BmiDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="FemaleBmi">
+          <Key>
+            <PropertyRef Name="Age_group" />
+          </Key>
+          <Property Name="Age_group" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Gender" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Year" Type="Int32" Nullable="false" />
+          <Property Name="Underweight" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Normal_range_i" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Normal_range_ii" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Total_normal_range" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Overweight" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Obesity_class_i" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Obesity_class_ii" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Obesity_class_iii" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Total_obese" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Total_overweight_and_obese" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MaleBmi">
+          <Key>
+            <PropertyRef Name="Age_group" />
+          </Key>
+          <Property Name="Age_group" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Gender" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Year" Type="Int32" Nullable="false" />
+          <Property Name="Underweight" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Normal_range_i" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Normal_range_ii" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Total_normal_range" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Overweight" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Obesity_class_i" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Obesity_class_ii" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Obesity_class_iii" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Total_obese" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Total_overweight_and_obese" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="BmiDBEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="FemaleBmis" EntityType="Self.FemaleBmi" />
+          <EntitySet Name="MaleBmis" EntityType="Self.MaleBmi" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="BmiDBModelStoreContainer" CdmEntityContainer="BmiDBEntities1">
+          <EntitySetMapping Name="FemaleBmis">
+            <EntityTypeMapping TypeName="BmiDBModel.FemaleBmi">
+              <MappingFragment StoreEntitySet="FemaleBmi">
+                <ScalarProperty Name="Age_group" ColumnName="Age_group" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="Year" ColumnName="Year" />
+                <ScalarProperty Name="Underweight" ColumnName="Underweight" />
+                <ScalarProperty Name="Normal_range_i" ColumnName="Normal_range_i" />
+                <ScalarProperty Name="Normal_range_ii" ColumnName="Normal_range_ii" />
+                <ScalarProperty Name="Total_normal_range" ColumnName="Total_normal_range" />
+                <ScalarProperty Name="Overweight" ColumnName="Overweight" />
+                <ScalarProperty Name="Obesity_class_i" ColumnName="Obesity_class_i" />
+                <ScalarProperty Name="Obesity_class_ii" ColumnName="Obesity_class_ii" />
+                <ScalarProperty Name="Obesity_class_iii" ColumnName="Obesity_class_iii" />
+                <ScalarProperty Name="Total_obese" ColumnName="Total_obese" />
+                <ScalarProperty Name="Total_overweight_and_obese" ColumnName="Total_overweight_and_obese" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MaleBmis">
+            <EntityTypeMapping TypeName="BmiDBModel.MaleBmi">
+              <MappingFragment StoreEntitySet="MaleBmi">
+                <ScalarProperty Name="Age_group" ColumnName="Age_group" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="Year" ColumnName="Year" />
+                <ScalarProperty Name="Underweight" ColumnName="Underweight" />
+                <ScalarProperty Name="Normal_range_i" ColumnName="Normal_range_i" />
+                <ScalarProperty Name="Normal_range_ii" ColumnName="Normal_range_ii" />
+                <ScalarProperty Name="Total_normal_range" ColumnName="Total_normal_range" />
+                <ScalarProperty Name="Overweight" ColumnName="Overweight" />
+                <ScalarProperty Name="Obesity_class_i" ColumnName="Obesity_class_i" />
+                <ScalarProperty Name="Obesity_class_ii" ColumnName="Obesity_class_ii" />
+                <ScalarProperty Name="Obesity_class_iii" ColumnName="Obesity_class_iii" />
+                <ScalarProperty Name="Total_obese" ColumnName="Total_obese" />
+                <ScalarProperty Name="Total_overweight_and_obese" ColumnName="Total_overweight_and_obese" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
