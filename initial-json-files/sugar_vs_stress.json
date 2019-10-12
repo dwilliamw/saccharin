@@ -1,0 +1,42 @@
+[
+	{
+		"sugar": 50,
+		"stress": 63
+	},
+	{
+		"sugar": 25,
+		"stress": 30
+	},
+	{
+		"sugar": 150,
+		"stress": 90
+	},
+	{
+		"sugar": 76,
+		"stress": 63
+	},
+	{
+		"sugar": 90,
+		"stress": 70
+	},
+	{
+		"sugar": 200,
+		"stress": 95
+	},
+	{
+		"sugar": 113,
+		"stress": 73
+	},
+	{
+		"sugar": 63,
+		"stress": 30
+	},
+	{
+		"sugar": 52,
+		"stress": 40
+	},
+	{
+		"sugar": 20,
+		"stress": 25
+	}
+]
