@@ -146,6 +146,11 @@ function createStatusGauge(val) {
     });
 };
 
+// To hide the loading spinner
+function hideLoader() {
+    $("#loader").attr('class', 'loader loader-default')
+};
+
 // To validate that the user's have answered all of the questions
 function inputValidation() {
     if ($('input[name="q1"]:checked').length == 0) {
@@ -261,9 +266,4 @@ function retrieveAndUpdateData() {
 // To show the loading spinner
 function showLoader() {
     $("#loader").attr('class', 'loader loader-default is-active')
-};
-
-// To hide the loading spinner
-function hideLoader() {
-    $("#loader").attr('class', 'loader loader-default')
 };

@@ -151,7 +151,7 @@
     <None Include="Scripts\umd\popper.min.js.map" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\FIT5120_Enigma_Buri\FIT5120_Project_Saccharin.csproj">
+    <ProjectReference Include="..\FIT5120_Saccharin\FIT5120_Project_Saccharin.csproj">
       <Project>{D4BC09F2-4672-4E05-BC29-E946BAD2F8E8}</Project>
       <Name>FIT5120_Project_Saccharin</Name>
     </ProjectReference>

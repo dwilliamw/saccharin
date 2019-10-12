@@ -1,55 +1,18 @@
-﻿// To generate the low intensity exercise buttons
-function lowButtons() {
-    var lowList = ['Billiards', 'Bowling', 'Burpee', 'Gardening', 'Golf', 'Ping-Pong', 'Push-up', 'Sitting', 'Sit-ups',
-                    'Softball', 'Tai-Chi', 'Track-and-Field', 'Walking', 'Weight-lifting', 'Yoga'];
-    for (i = 0; i < lowList.length; i++) {
-        var btn = document.createElement("input");
-        var text = document.createTextNode(lowList[i]);
-        btn.appendChild(text);
-        btn.setAttribute("id", "low" + i);
-        btn.setAttribute("type", "button")
-        btn.setAttribute("class", "mybuttons");
-        btn.setAttribute("value", lowList[i]);
-        btn.setAttribute("style", "background-image: url(/img/exercise-buttons/low/" + lowList[i] + ".jpg" + ");")
-        btn.setAttribute("onclick", "getExcerciseDB(this.value);")
-        document.getElementById("tab1").appendChild(btn);
-    };
+﻿// To check whether the output contains a specific exercise
+function checkElement(v) {
+    return exercise_array.includes(v);
 };
 
-// To generate the moderate intensity exercise buttons
-function modButtons() {
-    var modList = ['Badminton', 'Baseball', 'Basketball', 'Kayaking', 'Rowing', 'Running', 'Skateboarding', 'Skiing', 'Snorkeling',
-                    'Snow-shoeing', 'Stationary-cycling', 'Volleyball', 'Wrestling'];
-    for (i = 0; i < modList.length; i++) {
-        var btn = document.createElement("input");
-        var text = document.createTextNode(modList[i]);
-        btn.appendChild(text);
-        btn.setAttribute("id", "mod" + i);
-        btn.setAttribute("type", "button")
-        btn.setAttribute("class", "mybuttons");
-        btn.setAttribute("value", modList[i]);
-        btn.setAttribute("style", "background-image: url(/img/exercise-buttons/mod/" + modList[i] + ".jpg" + ");")
-        btn.setAttribute("onclick", "getExcerciseDB(this.value);")
-        document.getElementById("tab2").appendChild(btn);
-    };
+// To clear the existing output content
+function clearOutput() {
+    $('#output-exercises').empty();
+    exercise_array = [];
 };
 
-// To generate the highest intensity exercise buttons
-function intButtons() {
-    var intList = ['Aerobics', 'Boxing', 'Handball', 'Soccer', 'Speed-skating', 'Squash', 'Stair-machine',
-                    'Swimming', 'Tennis', 'Water-polo'];
-    for (i = 0; i < intList.length; i++) {
-        var btn = document.createElement("input");
-        var text = document.createTextNode(intList[i]);
-        btn.appendChild(text);
-        btn.setAttribute("id", "int" + i);
-        btn.setAttribute("type", "button")
-        btn.setAttribute("class", "mybuttons");
-        btn.setAttribute("value", intList[i]);
-        btn.setAttribute("style", "background-image: url(/img/exercise-buttons/int/" + intList[i] + ".jpg" + ");")
-        btn.setAttribute("onclick", "getExcerciseDB(this.value);");
-        document.getElementById("tab3").appendChild(btn);
-    };
+// To count the number of outputs generated
+function countOutput() {
+    var length = $('#output-exercises').find('p').length;
+    return length;
 };
 
 // To call all of the button functions
@@ -61,40 +24,6 @@ function createAllButtons() {
     getCalFromSugars();
 };
 
-// To count the number of outputs generated
-function countOutput() {
-    var length = $('#output-exercises').find('p').length;
-    return length;
-};
-
-
-// To check whether the output contains a specific exercise
-function checkElement(v) {
-    return exercise_array.includes(v);
-}
-
-// To show the number of calories that need to be burned
-function showCaloriesToBurn() {
-    var myCalories = $('#kcal').val();
-    $('#myKcal').text('Total Calories You Want to Burn: ' + myCalories + ' Calories (kcal)');
-};
-
-// To hide the output container
-function hideOutputContainer() {
-    $('.output-container').hide();
-};
-
-// To show the output container
-function showOutputContainer() {
-    $('.output-container').show();
-};
-
-// To clear the existing output content
-function clearOutput() {
-    $('#output-exercises').empty();
-    exercise_array = [];
-};
-
 // To get the calories from sugars from the local storage
 function getCalFromSugars() {
     var calFromSugar = window.localStorage.getItem('localCalories')
@@ -103,22 +32,7 @@ function getCalFromSugars() {
     } else {
         $('#kcal').val('0');
     };
-    
-};
 
-// To automatically scroll down to the output section
-function scrollToOutput() {
-    document.getElementById('scroll-here').scrollIntoView({ behavior: "smooth", block: "end", inline: "start" });
-};
-
-var exercise_array = [];
-
-// To get the GIF by name
-function getGIFByName(name) {
-    return data.filter(
-        function (data) {
-            return data.name == name
-        });
 };
 
 // To call the API and get exercise information in terms of calories burned
@@ -173,9 +87,14 @@ function getExcerciseDB(value) {
     };
 };
 
-// To show the loading spinner
-function showLoader() {
-    $("#loader").attr('class', 'loader loader-default is-active')
+var exercise_array = [];
+
+// To get the GIF by name
+function getGIFByName(name) {
+    return data.filter(
+        function (data) {
+            return data.name == name
+        });
 };
 
 // To hide the loading spinner
@@ -183,6 +102,87 @@ function hideLoader() {
     $("#loader").attr('class', 'loader loader-default')
 };
 
+// To hide the output container
+function hideOutputContainer() {
+    $('.output-container').hide();
+};
+
+// To generate the highest intensity exercise buttons
+function intButtons() {
+    var intList = ['Aerobics', 'Boxing', 'Handball', 'Soccer', 'Speed-skating', 'Squash', 'Stair-machine',
+        'Swimming', 'Tennis', 'Water-polo'];
+    for (i = 0; i < intList.length; i++) {
+        var btn = document.createElement("input");
+        var text = document.createTextNode(intList[i]);
+        btn.appendChild(text);
+        btn.setAttribute("id", "int" + i);
+        btn.setAttribute("type", "button")
+        btn.setAttribute("class", "mybuttons");
+        btn.setAttribute("value", intList[i]);
+        btn.setAttribute("style", "background-image: url(/img/exercise-buttons/int/" + intList[i] + ".jpg" + ");")
+        btn.setAttribute("onclick", "getExcerciseDB(this.value);");
+        document.getElementById("tab3").appendChild(btn);
+    };
+};
+
+// To generate the low intensity exercise buttons
+function lowButtons() {
+    var lowList = ['Billiards', 'Bowling', 'Burpee', 'Gardening', 'Golf', 'Ping-Pong', 'Push-up', 'Sitting', 'Sit-ups',
+                    'Softball', 'Tai-Chi', 'Track-and-Field', 'Walking', 'Weight-lifting', 'Yoga'];
+    for (i = 0; i < lowList.length; i++) {
+        var btn = document.createElement("input");
+        var text = document.createTextNode(lowList[i]);
+        btn.appendChild(text);
+        btn.setAttribute("id", "low" + i);
+        btn.setAttribute("type", "button")
+        btn.setAttribute("class", "mybuttons");
+        btn.setAttribute("value", lowList[i]);
+        btn.setAttribute("style", "background-image: url(/img/exercise-buttons/low/" + lowList[i] + ".jpg" + ");")
+        btn.setAttribute("onclick", "getExcerciseDB(this.value);")
+        document.getElementById("tab1").appendChild(btn);
+    };
+};
+
+// To generate the moderate intensity exercise buttons
+function modButtons() {
+    var modList = ['Badminton', 'Baseball', 'Basketball', 'Kayaking', 'Rowing', 'Running', 'Skateboarding', 'Skiing', 'Snorkeling',
+                    'Snow-shoeing', 'Stationary-cycling', 'Volleyball', 'Wrestling'];
+    for (i = 0; i < modList.length; i++) {
+        var btn = document.createElement("input");
+        var text = document.createTextNode(modList[i]);
+        btn.appendChild(text);
+        btn.setAttribute("id", "mod" + i);
+        btn.setAttribute("type", "button")
+        btn.setAttribute("class", "mybuttons");
+        btn.setAttribute("value", modList[i]);
+        btn.setAttribute("style", "background-image: url(/img/exercise-buttons/mod/" + modList[i] + ".jpg" + ");")
+        btn.setAttribute("onclick", "getExcerciseDB(this.value);")
+        document.getElementById("tab2").appendChild(btn);
+    };
+};
+
+// To automatically scroll down to the output section
+function scrollToOutput() {
+    document.getElementById('scroll-here').scrollIntoView({ behavior: "smooth", block: "end", inline: "start" });
+};
+
+// To show the number of calories that need to be burned
+function showCaloriesToBurn() {
+    var myCalories = $('#kcal').val();
+    $('#myKcal').text('Total Calories You Want to Burn: ' + myCalories + ' Calories (kcal)');
+};
+
+// To show the loading spinner
+function showLoader() {
+    $("#loader").attr('class', 'loader loader-default is-active')
+};
+
+// To show the output container
+function showOutputContainer() {
+    $('.output-container').show();
+};
+
+// The list below is used to get all the GIFs media
 var data = [
     { name: 'Billiards', gif: "https://media.giphy.com/media/QXWORsvGb3zdS/giphy.gif" },
     { name: 'Bowling', gif: "https://media.giphy.com/media/VgJdeO5Fkvfqg/giphy.gif" },
