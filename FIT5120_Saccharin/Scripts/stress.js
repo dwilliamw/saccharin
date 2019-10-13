@@ -223,6 +223,7 @@ function resetAnswer() {
     var answerbox = document.getElementById('answer');
     answerbox.innerHTML = "";
     $('#answer').hide();
+    $('#div_str_btn').hide();
 };
 
 // To retrieve and update to Firebase DB

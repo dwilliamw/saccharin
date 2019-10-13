@@ -156,6 +156,11 @@
             border-color: currentColor;
             background-color: white;
         }
+    button.selected {
+        color: #F09C35;
+        border-color: currentColor;
+        background-color: white;
+    }
     .toggle_btn {
         /* ... */
         /* all browsers: remove the default outline since
@@ -163,3 +168,9 @@
         outline: none;
     }
 </style>
+<script>
+    $('button').on('click', function () {
+        $('button').removeClass('selected');
+        $(this).addClass('toggle_btn selected');
+    });
+</script>
